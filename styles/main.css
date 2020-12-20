@@ -156,10 +156,6 @@ input:focus {
     margin-right: 10px;
 }
 
-.hidden {
-    display: none;
-}
-
 /* Active States  */
 
 .todoContainer .check:hover {
@@ -369,6 +365,10 @@ input:focus {
 
     .dark .topDiv {
         background-image: url("/images/bg-mobile-dark.jpg");
+    }
+
+    .hidden {
+        display: none;
     }
 
     .content__footer-filters p:not(:last-child) {
