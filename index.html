@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="topDiv animate__animated animate__fadeIn">
+    <div class="content animate__animated animate__fadeInDownBig">
+      <div class="content__header">
+        <h1>T O D O</h1>
+        <img class="darkmodetoggle" src="./images/icon-moon.svg" alt="darkmode">
+      </div>
+      <div class="content__todo todoContainer shadowContent">
+        <div class="check">
+          <img class="" src="./images/icon-check.svg" alt="">
+        </div>
+        <input class="new-todo" type="text" placeholder="Create a new todo...">
+      </div>
+      <div class="content__todos shadowContent">
+      </div>
+      <div class="content__footer todoContainer shadowContent">
+        <p class="text">5 items left</p>
+        <div class="content__footer-filters">
+          <p class="text all selected">All</p>
+          <p class="text active">Active</p>
+          <p class="text complete">Completed</p>
+        </div>
+        <p class="text clear-completed">Clear Completed</p>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
