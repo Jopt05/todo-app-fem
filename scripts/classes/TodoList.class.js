@@ -34,7 +34,7 @@ export class TodoList {
     }
 
     deleteChecked() {
-        this.todos = this.todos.filter( todo => !todo.completado );
+        this.todos = this.todos.filter( todo => !todo.completed );
         this.saveLocalStorage();
     }
 

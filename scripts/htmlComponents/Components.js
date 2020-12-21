@@ -18,7 +18,6 @@ window.addEventListener('load', () => {
                     ? data = JSON.parse( localStorage.getItem('darkMode') )
                     : data = false;
 
-    console.log(darkMode);
     if ( darkMode ) {
         darkModeButton.setAttribute("src", "./images/icon-sun.svg");
         body.classList.add('dark');
@@ -114,7 +113,9 @@ deleteBtn.addEventListener('click', () => {
 divFilters.addEventListener('click', (event) => {
 
 
-    const text = event.target.classList;
+    const text = event.target.innerHTML;
+
+    console.log(text)
 
     if ( !text ) {return;}
 
@@ -129,14 +130,21 @@ divFilters.addEventListener('click', (event) => {
         elem.classList.remove('hidden');
         const completed = elem.classList.contains('checked');
 
-        if ( text.contains('active') ){
-            if ( completed ) {
-                elem.classList.add('hidden');
-            }
-        } else if( text.contains("complete") ) {
-            if ( !completed ) {
-                elem.classList.add('hidden');
-            }
+        switch ( text ) {
+            case 'Completed':
+                if( !completed ) {
+                    elem.classList.add('hidden');
+                }
+            break;
+        
+            case 'Active':
+                if( completed ) {
+                    elem.classList.add('hidden');
+                }
+            break;
+
+            default:
+                break;
         }
 
     }

@@ -246,6 +246,10 @@ input:focus {
     color: var(--BrightBlue) !important;
 }
 
+.hidden {
+    display: none;
+}
+
 /* End Dark Mode  */
 
 @media only screen and (max-width: 500px) {
@@ -367,11 +371,11 @@ input:focus {
         background: url("/images/bg-mobile-dark.jpg");
     }
 
-    .hidden {
-        display: none;
-    }
-
     .content__footer-filters p:not(:last-child) {
         margin-right: 20px;
+    }
+
+    .hidden {
+        display: none;
     }
 }
