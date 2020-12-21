@@ -364,7 +364,7 @@ input:focus {
     }
 
     .dark .topDiv {
-        background-image: url("/images/bg-mobile-dark.jpg");
+        background: url("/images/bg-mobile-dark.jpg");
     }
 
     .hidden {
