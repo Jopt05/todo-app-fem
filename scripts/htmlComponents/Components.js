@@ -11,6 +11,22 @@ body          = document.body,
 darkModeButton = document.querySelector('.darkmodetoggle');
 
 let darkMode = false;
+let data;
+
+window.addEventListener('load', () => {
+    darkMode = ( localStorage.getItem('darkMode') )
+                    ? data = JSON.parse( localStorage.getItem('darkMode') )
+                    : data = false;
+
+    console.log(darkMode);
+    if ( darkMode ) {
+        darkModeButton.setAttribute("src", "./images/icon-sun.svg");
+        body.classList.add('dark');
+    } else {
+        darkModeButton.setAttribute("src", "./images/icon-moon.svg");
+        body.classList.remove('dark');
+    }
+})
 
 export const createHtml = ( todo ) => {
 
@@ -131,6 +147,7 @@ darkModeButton.addEventListener('click', () => {
 
     body.classList.toggle('dark');
     darkMode = !darkMode;
+    localStorage.setItem( 'darkMode', JSON.stringify(darkMode) );
     const src = darkModeButton.getAttribute('src');
     (src == "./images/icon-moon.svg")
     ? darkModeButton.setAttribute("src", "./images/icon-sun.svg")
