@@ -8,10 +8,12 @@ newTodoInput  = document.querySelector('.new-todo'),
     deleteBtn = document.querySelector('.clear-completed'),
 divFilters    = document.querySelector('.content__footer-filters'),
 body          = document.body,
+counter       = document.querySelector('.counter'),
 darkModeButton = document.querySelector('.darkmodetoggle');
 
 let darkMode = false;
 let data;
+let dataItemsLeft;
 
 window.addEventListener('load', () => {
     darkMode = ( localStorage.getItem('darkMode') )
@@ -26,6 +28,22 @@ window.addEventListener('load', () => {
         body.classList.remove('dark');
     }
 })
+
+export const loadItemsLeft = () => {
+
+    let itemsLeft = 0;
+
+    dataItemsLeft = ( localStorage.getItem('todo') )
+                    ? dataItemsLeft = JSON.parse( localStorage.getItem('todo') )
+                    : dataItemsLeft = [];
+
+    dataItemsLeft.forEach( todo => {
+        ( !todo.completed ) ? itemsLeft++ : null;
+    } )
+
+    counter.innerHTML = `${ itemsLeft } items left`
+
+}
 
 export const createHtml = ( todo ) => {
 
