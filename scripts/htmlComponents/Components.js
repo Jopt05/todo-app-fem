@@ -1,7 +1,7 @@
 
 import { Todo } from '../classes/Todo.class.js'
 import { TodoList } from '../classes/TodoList.class.js'
-import { todoList } from '../main.js';
+import { todoList } from '../main.js'
 
 const divTodo = document.querySelector('.content__todos'),
 newTodoInput  = document.querySelector('.new-todo'),
